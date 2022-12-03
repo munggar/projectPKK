@@ -3,6 +3,7 @@
 @include('include.head')
 
 @include('include.loader')
+<link rel="stylesheet" href="../css/pagination.css">
 
 <body onload="myFunction()" style="margin:0;">
     <div id="loader"></div>
@@ -75,9 +76,25 @@
                                                     </div>
                                                 </div>
                                                 <a href="{{ route('daftar') }}" class="btn btn-primary">Tambah Data</a>
-                                                <div class="table-responsive">
-                                                    <table class="table">
-                                                        <tr align="center">
+                                                <hr>
+                                                <form class="form" method="get" action="/search">
+                                                    <div class="form-group w-100 mb-3">
+                                                        <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan nama siswa" value="{{ request('search') }}">
+                                                        @if (request('search'))
+                                                        <a href="/muklas" style="position: relative; right: 735px"><i class="fa-solid fa-arrow-left"></i></a>
+                                                            @endif
+                                                            <button type="submit" class="btn btn-primary mb-1">Cari</button>
+                                                        </div>
+                                                    </form>
+                                                    <!-- Start kode untuk form pencarian -->
+                                                    @if ($message = Session::get('success'))
+                                                    <div class="alert alert-success">
+                                                        <p>{{ $message }}</p>
+                                                    </div>
+                                                    @endif
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <tr align="center">
                                                             <th>NO</th>
                                                             <th>NIS</th>
                                                             <th>NAMA</th>
@@ -103,11 +120,21 @@
                                                 </div>
                                             </div>
                                             <div class="pagination">
-                                                {{ $data->links() }}
+                                                {{ $data->links('vendor.pagination.custom') }}
                                             </div>
                                             @include('sweetalert::alert')
                                             <!-- JavaScript Bundle with Popper -->
                                             @include('include.js')
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

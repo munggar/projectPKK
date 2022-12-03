@@ -22,7 +22,7 @@
         <div class="card-body">
             <h2 class="text-center">Login form</h2>
             <br>
-            <form action="{{ url('upsiswa', $gal->id) }}" method="post" enctype="multipart/form-data">
+            <form action="/upsiswa/{{ $gal->id }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label class="foto" for="file">

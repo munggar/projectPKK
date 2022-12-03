@@ -80,6 +80,8 @@ Route::group(['middleware'=> ['auth']],function(){
         Route::get('kls',[KelasController::class,'kls'])->name('kls');
         Route::get('edit',[KelasController::class,'edit']);
         Route::get('daftar',[KelasController::class,'daftar'])->name('daftar');
+        Route::get('search', [KelasController::class, 'search']);
+        Route::post('cari_kas', [KelasController::class, 'cari_kas']);
         Route::get('muklas',[KelasController::class,'muklas'])->name('muklas');
         Route::get('pinjam',[KelasController::class,'pinjam'])->name('pinjam');
         Route::get('kas',[KelasController::class,'kas'])->name('kas');
@@ -95,7 +97,7 @@ Route::group(['middleware'=> ['auth']],function(){
         Route::get('data', [KelasController::class, 'data']);
 
         Route::get('hps/{id}', [KelasController::class, 'delete']);
-        Route::get('pus/{id}', [KelasController::class, 'pus']);
+        Route::get('hapus_siswa/{id}', [KelasController::class, 'hapus_siswa']);
 
         // aksi pelajaran adaptif
         Route::get('madit/{id}', [KelasController::class, 'madit']);

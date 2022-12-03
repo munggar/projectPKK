@@ -3,11 +3,42 @@
 
 <head>
     @include('template.style')
+    <title>XII RPL 2 - Jadwal dan Mapel</title>
 </head>
 
 <body>
     <!-- ***** Header Area Start ***** -->
-    @include('template.header')
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="#top" class="logo">
+                            XII RPL 2
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="/rpl">Beranda</a></li>
+                            <li><a href="/rpl/#meetings">Galeri</a></li>
+                            <li class="has-sub">
+                                <a href="javascript:void(0)">MataPel & Kegiatan</a>
+                                <ul class="sub-menu">
+                                    <li><a href="/jadwal&kegiatan">Normatif dan Adaptif</a></li>
+                                    <li><a href="/jadwal&kegiatan">Kejuruan</a></li>
+                                    <li><a href="/jadwal&kegiatan">Jadwal Pelajaran</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="/rpl/#kas">Keuangan</a></li>
+                            <li class="scroll-to-section"><a href="/rpl/#contact">Kontak Kami</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <!-- ***** Header Area End ***** -->
 
     <section class="heading-page header-text" id="top">

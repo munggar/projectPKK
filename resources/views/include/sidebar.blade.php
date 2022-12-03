@@ -46,7 +46,7 @@
             </a>
         </li>
 
-        <li class="nav-item menu-items">
+        <li class="nav-item menu-items {{ Request::is(['adaptiff','matapel','jadwalpel']) ? 'active' : '' }}">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic1" aria-expanded="false"
                 aria-controls="ui-basic">
                 <span class="menu-icon">
@@ -72,7 +72,7 @@
                 <span class="menu-title">Data Peminjaman Buku</span>
             </a>
         </li>
-        
+
         <li class="nav-item menu-items {{ Request::is('data') ? 'active' : '' }}">
             <a class="nav-link" href="/data">
                 <span class="menu-icon">
@@ -81,7 +81,7 @@
                 <span class="menu-title">Data Akun</span>
             </a>
         </li>
-        
+
         <li class="nav-item menu-items {{ Request::is('masukan') ? 'active' : '' }}">
             <a class="nav-link" href="/masukan">
                 <span class="menu-icon">
@@ -90,8 +90,8 @@
                 <span class="menu-title">Masukan</span>
             </a>
         </li>
-        
-        <li class="nav-item menu-items {{ Request::is('#ui-basic') ? 'active' : '' }}">
+
+        <li class="nav-item menu-items  {{ Request::is(['galkas','galerigur']) ? 'active' : '' }}">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic"
                 aria-controls="ui-basic">
                 <span class="menu-icon">

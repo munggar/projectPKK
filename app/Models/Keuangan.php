@@ -11,8 +11,16 @@ class Keuangan extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['id','siswa_id','harga','keterangan'];
 
+    public function scopeFilter($query, array $filters) {
+        $query->when($filters['siswa'] ?? false, function($query, $siswa) {
+            return $query->whereHas('siswa', function($query) use ($siswa) {
+                $query->where('nama', 'like', "%". $siswa. "%");
+            });
+        });
+    }
+
     public function siswa(){
         return $this->belongsTo('App\Models\Siswa');
     }
-    
+
 }

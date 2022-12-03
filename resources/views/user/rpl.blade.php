@@ -3,6 +3,7 @@
 
   <head>
       @include('template.style')
+      <title>XII RPL 2 - Beranda</title>
   </head>
   <!-- ***** Header Area ***** -->
   @include('template.header')

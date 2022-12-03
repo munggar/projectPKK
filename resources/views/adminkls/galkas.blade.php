@@ -62,7 +62,7 @@
                                                                 @endif</td>
                                                             <td><a class="btne" href={{ url('eddit', $f->id) }}><i
                                                                         class="fa-solid fa-pen-to-square"></i></a> | <a
-                                                                    class="btne" href={{ url('pus', $f->id) }}><i
+                                                                    class="btne" href={{ url('hapus_siswa', $f->id) }}><i
                                                                         class="fa-solid fa-trash-can"></i></a></td>
                                                         </tr>
                                                         @endforeach

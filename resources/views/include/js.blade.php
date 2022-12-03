@@ -12,18 +12,18 @@
     <!-- End plugin js for this page -->
 
     <!-- inject:js -->
-    <script src="../vendors/js/off-canvas.js"></script>
-    <script src="../vendors/js/hoverable-collapse.js"></script>
-    <script src="../vendors/js/misc.js"></script>
-    <script src="../vendors/js/settings.js"></script>
-    <script src="../vendors/js/todolist.js"></script>
+        {{-- <script src="../vendors/js/off-canvas.js"></script>
+        <script src="../vendors/js/hoverable-collapse.js"></script>
+        <script src="../vendors/js/misc.js"></script>
+        <script src="../vendors/js/settings.js"></script>
+        <script src="../vendors/js/todolist.js"></script> --}}
     <!-- endinject -->
-    
+
     <!-- Custom js for this page -->
     <script src="../vendors/js/dashboard.js"></script>
     <script src="../vendors/js/carousel.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>	
+	<script type="text/javascript" src="js/bootstrap.js"></script>
     <!-- End custom js for this page -->
 
 

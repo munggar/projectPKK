@@ -145,9 +145,13 @@ class KelasController extends Controller
         return view('bayar',compact('nama'));
     }
     public function kas(){
-        $uang = Keuangan::paginate(10);
+        $uang = Keuangan::filter(request(['siswa']))->paginate(6);
         $keluar = Pengeluaran::all();
-        return view('adminkls.kas',compact('uang','keluar'));
+
+        return view('adminkls.kas',[
+            "keluar" => $keluar,
+            "uang" => $uang,
+        ]);
     }
     public function cetakkas(){
         $uang = Keuangan::all();
@@ -185,6 +189,13 @@ class KelasController extends Controller
     public function galkas(){
         $murid = Galfot::Paginate(8);
         return view('adminkls.galkas',compact('murid'));
+    }
+    // hapus galeri siswa
+    public function hapus_siswa($id){
+        $murid=Galfot::find($id);
+        $murid->delete();
+        Alert::success('Data Berhasil Dihapus');
+        return redirect('galkas');
     }
     public function galgur(){
         $guru = Galeriguru::Paginate(8);
@@ -289,8 +300,15 @@ class KelasController extends Controller
         Alert::success('Berhasil', 'Berhasil Menambahkan data Siswa');
         return redirect('muklas');
     }
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $data = Siswa::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('adminkls.muklas', compact('data'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
     public function muklas(){
-        $data = Siswa::paginate(10);
+        $data = Siswa::paginate(5);
         return view('adminkls.muklas',compact('data'));
     }
 
@@ -485,14 +503,14 @@ class KelasController extends Controller
             $namaFile = $nm->getClientOriginalName();
             $dtUpload = Galfot::findorfail($request->id)->update([
                 'siswa_id' => $request->siswa_id,
-                'keterangan' => $request->keterangan,
+                'ket' => $request->ket,
                 'foto' => $namaFile,
             ]);
         }
 
         $dtUpload = Galfot::findorfail($request->id)->update([
         'siswa_id' => $request->siswa_id,
-        'keterangan' => $request->keterangan,
+        'ket' => $request->ket,
     ]);
 
     if ($request->foto) {

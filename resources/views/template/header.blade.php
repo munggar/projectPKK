@@ -17,7 +17,7 @@
                             <ul class="sub-menu">
                                 <li><a href="/jadwal&kegiatan">Normatif dan Adaptif</a></li>
                                 <li><a href="/jadwal&kegiatan">Kejuruan</a></li>
-                                <li><a href="/jadwal&kegiatan">Kegiatan</a></li>
+                                <li><a href="/jadwal&kegiatan">Jadwal Pelajaran</a></li>
                             </ul>
                         </li>
                         <li class="scroll-to-section"><a href="#kas">Keuangan</a></li>
